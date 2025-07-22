@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Comic+Neue:wght@400;700&family=Patrick+Hand&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <title>This Precious Town</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Preload important images -->
+    <link rel="preload" href="assets/dirt.jpg" as="image">
+    <link rel="preload" href="assets/grass.jpg" as="image">
+    <link rel="preload" href="assets/puddle.jpg" as="image">
+    <link rel="preload" href="assets/mountain.jpg" as="image">
+    <link rel="preload" href="assets/village.jpg" as="image">
+    <link rel="preload" href="assets/river_house.jpg" as="image">
+    <link rel="preload" href="assets/farmer_house.jpg" as="image">
+    <link rel="preload" href="assets/blacksmith_house.jpg" as="image">
+    <link rel="preload" href="assets/castle.jpg" as="image">
+    <link rel="preload" href="assets/forest.jpg" as="image">
+    <link rel="preload" href="assets/villager.gif" as="image">
+    <link rel="preload" href="assets/boar.gif" as="image">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <h1 id="gameTitle"></h1>
+    
+    <div class="villager-counter">
+        <div class="villager-icon"></div>
+        <span id="villagerCount">100</span>
+    </div>
+    
+    <div class="energy-container" id="energyContainer">
+        <div class="energy"></div>
+        <div class="energy"></div>
+        <div class="energy"></div>
+        <div class="energy"></div>
+        <div class="energy"></div>
+    </div>
+	
+	<div class="settings-toggle">
+	  <input type="checkbox" id="disableTooltips">
+	  <label for="disableTooltips">Disable Help Tooltips</label>
+	</div>
+    
+    <div class="tool-selection">
+		<div class="tool-btn" id="bulldozer-tool" title="Bulldozer (Costs 2 Energy)">
+			<div class="tool-cost">
+				<div class="energy-cost"></div>
+				<div class="energy-cost"></div>
+			</div>
+		</div>
+        <div class="tool-btn" id="dirt-tool" title="Dirt (Costs 0 Energy)">
+            <div class="tool-cost"></div>
+        </div>
+		<div class="tool-btn" id="puddle-tool" title="Puddle (Costs 0 Energy)">
+            <div class="tool-cost"></div>
+        </div>
+		<div class="tool-btn" id="stone-tool" title="Stone (Costs 0 Energy)">
+            <div class="tool-cost"></div>
+        </div>
+        <div class="tool-btn" id="windmill-tool" title="Windmill (Costs 1 Energy)">
+            <div class="tool-cost">
+                <div class="energy-cost"></div>
+            </div>
+        </div>
+        <div class="tool-btn house-tool" id="farmer-house-tool" title="Carpenter House (Costs 2 Energy)">
+            <div class="tool-cost">
+                <div class="energy-cost"></div>
+                <div class="energy-cost"></div>
+            </div>
+        </div>
+        <div class="tool-btn house-tool" id="river-house-tool" title="Fisherman House (Costs 2 Energy)">
+            <div class="tool-cost">
+                <div class="energy-cost"></div>
+                <div class="energy-cost"></div>
+            </div>
+        </div>
+        <div class="tool-btn house-tool" id="blacksmith-house-tool" title="Stonecutter House (Costs 2 Energy)">
+            <div class="tool-cost">
+                <div class="energy-cost"></div>
+                <div class="energy-cost"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scene-container" id="sceneContainer">
+        <div class="scene">
+            <div class="grid-3d" id="grid3d"></div>
+        </div>
+    </div>
+    
+    <audio id="bellSound1" preload="auto"><source src="assets/bell1.mp3" type="audio/mpeg"></audio>
+    <audio id="bellSound2" preload="auto"><source src="assets/bell2.mp3" type="audio/mpeg"></audio>
+    <audio id="bellSound3" preload="auto"><source src="assets/bell3.mp3" type="audio/mpeg"></audio>
+    <audio id="bellSound4" preload="auto"><source src="assets/bell4.mp3" type="audio/mpeg"></audio>
+    <audio id="bellSound5" preload="auto"><source src="assets/bell5.mp3" type="audio/mpeg"></audio>
+    <audio id="villagerSound" preload="auto"><source src="assets/villager.mp3" type="audio/mpeg"></audio>
+    <audio id="dirtSound" preload="auto"><source src="assets/dirt.mp3" type="audio/mpeg"></audio>
+    <audio id="boarSound" preload="auto"><source src="assets/boar.mp3" type="audio/mpeg"></audio>
+	<audio id="bulldozerSound" preload="auto"><source src="assets/bulldozer.mp3" type="audio/mpeg"></audio>
+    <audio id="ambientSound" preload="auto" loop>
+        <source src="assets/ambient.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+	<div class="instruction-container" id="instructionContainer">
+		<!-- Instructions will be added dynamically -->
+	</div>
+    <script src="script.js"></script>
+</body>
+</html>
